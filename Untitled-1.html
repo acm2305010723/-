@@ -1,0 +1,227 @@
+<doctype html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="Author" content="邓琴">
+        <title>个人网页</title>
+        <link rel="stylesheet" href="./css/index.css">
+    </head>
+
+    <body>
+        <header class="header">
+        <div class="nav-box">
+            <!--头部个人主页和背景-->
+            <span>个人介绍</span>
+            <ul class="nav">
+                <li><a href="/" class="on">首页</a></li>
+                <li><a href="#">关于</a></li>
+                <li><a href="#">联系</a></li>
+            </ul>
+        </div>
+        </header>
+
+        <!--欢迎页面-->
+        <div class="banner">
+            欢迎来到我的个人主页
+        </div>
+
+        <!--个人介绍-->
+
+        <div class="introduce-tit">
+            我的介绍
+          </div>
+    
+        <div class="introduce">
+
+         <!--<div class="introduce-tit">
+           我的介绍
+         </div>-->
+
+         <div class="introduce-main">
+            <div class="l">
+               <img src="./img/pic.webp" width="220px">
+               <button id="changeImageButton">更改头像</button>
+               <input type="file" id="imageInput" accept="image/*">
+            <script>
+            const changeImageButton = document.getElementById('changeImageButton');
+            const imageInput = document.getElementById('imageInput');
+            const displayImage = document.getElementById('displayImage');
+
+            changeImageButton.addEventListener('click', function () {
+            imageInput.click();
+            });
+
+            imageInput.addEventListener('change', function () {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    displayImage.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+            });
+            </script>
+               
+        
+            </div>
+        </div>
+
+        <!--多个保存键，无法一次性保存姓名班级和学校
+        <div class="r">
+
+            <p>姓名：邓琴</p>
+            <p>性别：女</p>
+            <p>班级：23级计科六班</p>
+            <p>学号：2305010723</p>
+
+
+            <p>姓名：</p>
+            <div class="editable-text" contenteditable="true" >邓琴</div>
+            <button onclick="saveText()">保存</button>
+            <script>
+                function saveText() {
+                    const editableDiv = document.querySelector('.editable-text');
+                    const text = editableDiv.textContent;
+                    alert(`保存的文本内容是: ${text}`);
+                }
+            </script>
+
+            <p>性别：</p>
+            <div class="editable-text" contenteditable="true" >女</div>
+            <button onclick="saveText()">保存</button>
+            <script>
+                function saveText() {
+                    const editableDiv = document.querySelector('.editable-text');
+                    const text = editableDiv.textContent;
+                    alert(`保存的文本内容是: ${text}`);
+                }
+            </script>
+
+            <p>班级：</p>
+            <div class="editable-text" contenteditable="true" >23级计科六班</div>
+            <button onclick="saveText()">保存</button>
+            <script>
+                function saveText() {
+                    const editableDiv = document.querySelector('.editable-text');
+                    const text = editableDiv.textContent;
+                    alert(`保存的文本内容是: ${text}`);
+                }
+            </script>
+
+            <p>学号：</p>
+            <div class="editable-text" contenteditable="true" >2305010723</div>
+            <button onclick="saveText()">保存</button>
+            <script>
+                function saveText() {
+                    const editableDiv = document.querySelector('.editable-text');
+                    const text = editableDiv.textContent;
+                    alert(`保存的文本内容是: ${text}`);
+                }
+            </script>
+
+        </div>-->
+        
+        <!--一次性可全部保存的姓名班级和学号-->
+        <div class="r">
+            <div class="field">
+                <label for="name">姓名:</label>
+                <span id="name-display">邓琴</span>
+                <input type="text" id="name-input">
+            </div>
+            <div class="field">
+                <label for="gender">性别:</label>
+                <span id="gender-display">女</span>
+                <input type="text" id="gender-input">
+            </div>
+            <div class="field">
+                <label for="class">班级:</label>
+                <span id="class-display">23级计科六班</span>
+                <input type="text" id="class-input">
+            </div>
+            <button onclick="enableEdit()">编辑</button>
+            <button id="save-button" style="display: none;" onclick="saveAll()">保存</button>
+            <script>
+                function enableEdit() {
+                    const fields = ['name', 'gender', 'class'];
+                    fields.forEach(field => {
+                        const display = document.getElementById(`${field}-display`);
+                        const input = document.getElementById(`${field}-input`);
+                        input.value = display.textContent;
+                        display.style.display = 'none';
+                        input.style.display = 'inline-block';
+                    });
+                    document.querySelector('button:first-of-type').style.display = 'none';
+                    document.getElementById('save-button').style.display = 'inline-block';
+                }
+        
+                function saveAll() {
+                    const fields = ['name', 'gender', 'class'];
+                    fields.forEach(field => {
+                        const display = document.getElementById(`${field}-display`);
+                        const input = document.getElementById(`${field}-input`);
+                        display.textContent = input.value;
+                        display.style.display = 'inline-block';
+                        input.style.display = 'none';
+                    });
+                    document.querySelector('button:first-of-type').style.display = 'inline-block';
+                    document.getElementById('save-button').style.display = 'none';
+                    alert('保存成功！');
+                }
+            </script>
+
+        </div>
+        </div>
+
+        <!--<div class="r">
+            <p>姓名：邓琴</p>
+            <p>性别：女</p>
+            <p>班级：23级计科六班</p>
+            <p>学号：2305010723</p>
+        </div>-->
+
+        <!--个人简介-->
+        <div class="introduce-tit">
+            个人简历
+          </div>
+          <div class="edu-box">
+                <img src="./img/hat.png" width="100">
+                <div class="z">
+                    以下为本人的简介（含毕业/就读院校、个人技能、实习经历等）
+                </div>
+
+                <div id="editor" class="editor" contenteditable="true">
+                    本人就读于湖南科技大学，是计算机院校的一名学生……
+                </div>
+                <button id="saveButton">保存</button>
+                <script>
+                    const editor = document.getElementById('editor');
+                    const saveButton = document.getElementById('saveButton');
+            
+                    saveButton.addEventListener('click', function () {
+                        const content = editor.innerHTML;
+                        // 这里可以将 content 保存到本地存储
+                        localStorage.setItem('articleContent', content);
+                        alert('文章已保存！');
+                    });
+            
+                    // 页面加载时尝试从本地存储恢复内容
+                    const savedContent = localStorage.getItem('articleContent');
+                    if (savedContent) {
+                        editor.innerHTML = savedContent;
+                    }
+                </script>
+                <!--可输入长文本，有点问题
+                <div class="container">
+                    <!--<input type="text" class="edit-box" placeholder="本人就读于湖南科技大学……">
+                    <textarea placeholder="  本人就读于湖南科技大学，是计算机系的一名学生……"></textarea>
+                    <button class="edit-button">编辑</button>
+                </div>-->
+          </div>
+
+
+        
+
+
+    </body>
+    </html>

@@ -1,0 +1,257 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+ul{
+    list-style: none;
+}
+
+body{
+    background: #ffffff;
+}
+
+/*头部*/
+.header{
+    height: 80px;
+    width: 100%;
+    /*box-sizing: border-box;*/
+    background: #8dd1ff6e;
+    border-bottom: 3px solid #000000;
+}
+.nav-box{
+    width: 1200px;
+    margin: 0 auto;
+    height: 40px;
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    font-size: 30px;
+    color: #333;
+}
+
+/*首页联系关于超链接*/
+a{
+    color: #333;
+    text-decoration: none;
+}
+
+/*欢迎和背景*/
+.nav-box  .nav{
+    display: flex;
+    font-size: 16px;
+    color: #555;
+
+}
+
+.nav-box  .nav li{
+    padding-left: 40px;
+}
+
+.nav-box  .nav a.on,.nav-box  .nav a:hover{
+    color: #000;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #333;
+}
+
+.banner{
+    width: 100%;
+    margin: 0 auto;
+    background: url(../img/banner.webp) no-repeat center center;
+    background-size: cover;
+    height: 312px; 
+
+    text-align: center;
+    line-height: 312px;
+    color: #fff;
+    font-size: 25px;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+/*可编辑的姓名*/
+.introduce{
+    width: 180px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.introduce-main .l{
+    margin-right: 60px;
+
+}
+
+
+.introduce .l img{
+    border-radius: 50%;
+    /*border-radius: 15px;*/
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    width: 300px;
+    height: auto;
+}
+
+
+.introduce .l button {
+        padding: 8px 15px;
+        font-size: 16px;
+        background-color: #2d3e4f;
+        color: white;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+    }
+
+    .introduce .l button:hover {
+        background-color: #284767;
+}
+/*更改头像*/
+#imageInput {
+        display: none;
+}
+
+
+.introduce-main{
+    /*display: flex;*/
+    display: grid;
+    place-items: center;
+    height: 300px;
+}
+
+.introduce-tit{
+    line-height: 50px;
+    font-size: 28px;
+    font-weight: 600;
+    padding-bottom: 20px;
+    color: #555;
+    margin-left: calc(100% /10);
+}
+
+.r{
+    line-height: 50px;
+    font-size: 18px;
+    color: #555;
+    /*display: grid;
+    place-items: center;
+    height: 200px;*/
+}
+
+
+/*多个保存键
+.r{
+    font-family: Arial, sans-serif;
+    padding: 2px;
+}
+
+.editable-text {
+    border: 1px solid #ccc;
+    padding: 1px;
+    width: 250px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 8px 15px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}*/
+
+.r {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.field {
+    margin-bottom: 10px;
+}
+
+.field label {
+    display: inline-block;
+    width: 80px;
+}
+
+.field span {
+    border: 1px solid #ccc;
+    padding: 5px;
+    display: inline-block;
+    width: 200px;
+}
+
+.field input {
+    width: 200px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    display: none;
+}
+
+button {
+    padding: 8px 15px;
+    background-color: #047cfd;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+.edu-box.r{
+    margin-left: 50px;
+    line-height: 50px;
+    font-size: 18px;
+    color: #555;
+}
+
+.edu-box{
+    margin-left: calc(100% / 10);
+}
+
+
+/*可编辑的简介和按钮*/
+.z{
+    margin: 20 auto;
+    color: #ecb6b6;
+    /*margin-left: calc(100% / 10);*/
+}
+
+.editor{
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.editor {
+    width: 90%;
+    height: 400px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    overflow-y: auto;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.edu-box button {
+    padding: 10px 20px;
+    background-color: #0c7bf1;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.edu-box  button:hover {
+    background-color: #031529;
+}
